@@ -28,6 +28,11 @@ class _HomepageState extends State<Homepage> {
   List tasks = ['job1', 'job2', 'job3'];
   TextEditingController textController = TextEditingController();
 
+  void remove(index){
+    print(tasks[index]);
+  }
+
+  
   @override
   Widget build(BuildContext context) {
       return Scaffold(
@@ -71,22 +76,22 @@ class _HomepageState extends State<Homepage> {
                 itemCount: tasks.length,
                 itemBuilder: (context, index){
                   return Slidable(
-                    startActionPane: const ActionPane(
+                    startActionPane: ActionPane(
                       // A motion is a widget used to control how the pane animates.
-                      motion: ScrollMotion(),
+                      motion: const ScrollMotion(),
                       // All actions are defined in the children parameter.
                       children: [
                         // A SlidableAction can have an icon and/or a label.
                         SlidableAction(
-                          onPressed: null,
-                          backgroundColor: Color(0xFFFE4A49),
+                          onPressed: (context)=>{},
+                          backgroundColor: const Color(0xFFFE4A49),
                           foregroundColor: Colors.white,
                           icon: Icons.delete,
                           label: 'Delete',
                         ),
                         SlidableAction(
-                          onPressed: null,
-                          backgroundColor: Color(0xFF21B7CA),
+                          onPressed: (context)=>{},
+                          backgroundColor: const Color(0xFF21B7CA),
                           foregroundColor: Colors.white,
                           icon: Icons.share,
                           label: 'Share',
